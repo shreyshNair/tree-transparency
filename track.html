@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Growth Progress Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background:linear-gradient(black,green);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgb(14, 1, 1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .plant-image {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .growth-stage {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #e8f5e9;
+            text-align: left;
+        }
+
+        .growth-stage h2 {
+            color: #388e3c;
+        }
+
+        .growth-stage p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .growth-timeline {
+            margin-top: 40px;
+        }
+
+        .stage {
+            margin-bottom: 20px;
+            background-color: #f1f8e9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stage img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .stage h3 {
+            margin-top: 10px;
+            color: #388e3c;
+        }
+
+        .stage p {
+            font-size: 14px;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Track Your Plant's Growth</h1>
+
+    <div class="growth-stage">
+        <h2>Plant Overview</h2>
+        <img class="plant-image" src="your-plant-image.jpg" alt="Plant Image">
+        <p>Welcome to your plant growth tracker! Below, you will see the different stages of growth that your plant has gone through. Each stage comes with a visual representation of your plant's progress over time. Keep track of your plant's journey with each milestone!</p>
+    </div>
+
+    <div class="growth-timeline">
+        <div class="stage">
+            <h3>Stage 1: Seedling</h3>
+            <img src="https://imgs.search.brave.com/rVc7BQl3YKP4Ph5ZvlunyX0_yctKbUcjp4yH8VPJnoc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTEz/ODgyNTcwMy9waG90/by9zZWVkbGluZy1y/ZWFkeS10by1iZS1w/bGFudGVkLWluLXRo/ZS1nYXJkZW4uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPWQ3/Nm5LTWpaSFBoYnQz/Uy1DekZUbE92Zllt/UjJfUDQ1T3c2MlJX/MzhpeWc9" alt="Seedling">
+            <p>This is when your plant just began to sprout! It's fragile but full of potential. The seedling stage is critical for root development and early growth.</p>
+        </div>
+
+        <div class="stage">
+            <h3>Stage 2: Early Growth</h3>
+            <p>Your plant is now growing stronger and taller. The first set of leaves appear, and the plant starts to show signs of healthy growth.</p>
+        </div>
+
+        <div class="stage">
+            <h3>Stage 3: Mature Plant</h3>
+            <p>The plant is now fully developed, with a sturdy stem and fully formed leaves. It's thriving and ready for new growth or flowers, depending on the species.</p>
+        </div>
+
+        <div class="stage">
+            <h3>Stage 4: Flowering (If applicable)</h3>
+            <p>Your plant has reached the blooming stage. The flowers start to open, and it's a clear sign of healthy development and maturity.</p>
+        </div>
+
+        <div class="stage">
+            <h3>Stage 5: Fully Grown & Harvest (If applicable)</h3>
+            <p>Your plant is now fully grown. If it’s a fruit or vegetable plant, it may be time to harvest! If it’s ornamental, it's at its peak beauty.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

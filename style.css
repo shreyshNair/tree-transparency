@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    color: #f1e8ebde;
+}
+
+html, body {
+    height: 100%;
+    perspective: 800px;
+    width: 100%;
+}
+#cursor{
+    height:10px;
+    width: 10px;
+    background-color: rgb(0, 5, 3);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    gap: 50px;
+    justify-content: flex-start;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav img {
+    height: 60%;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+
+video {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+#main {
+    position: relative;
+    color: white;
+    height: 100vh;
+}
+
+#page1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    z-index: 1;
+}
+
+
+#page1 h1 {
+    font-size: 90px;
+    font-weight: 900;
+    background-color: rgba(253, 253, 253, 0.005);
+    padding: 10px;
+    position: relative;
+}
+
+
+
+#page1 h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+#page1 p {
+    font-size: 15px;
+    font-weight: 500;
+    width: 40%;
+}
+#page2 {
+    padding: 20px;
+    background: linear-gradient(black, rgb(51, 106, 51));
+    color: #0c4e05ee;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+#scroller{
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    z-index: 10;
+}#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-n{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 80px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 60px;
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(216, 221, 216);
+}#scroller h4:hover{
+    color:rgb(0, 15, 5)
+}
+
+@keyframes scroll{
+    frame{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#aboutus{
+    
+    height:40vh;
+    width: 100%;
+    padding: 0 50px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#about img{
+    height: 220px;
+    width: 220px;
+    border-radius:20px ;
+    object-fit: cover;
+
+}
+#about-usin{
+    width: 50%;
+    text-align: center;
+}
+#about-usin h3{
+    
+    font-size: 54px;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+#about-usin p{
+    font-size: 15px;
+    line-height: 26px;
+    text-align: center;
+}
+#cards-container {
+    /* background-color: red; */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+.card {
+    height: 80%;
+    width: 24%;
+    /* background-color: blue; */
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+    
+}
+#card1 {
+    background-image: url(https://thumbs.dreamstime.com/b/silhouette-plant-seedling-pot-icon-isolated-dark-background-silhouette-plant-seedling-pot-icon-isolated-194111395.jpg);
+}
+#card2 {
+    background-image: url(https://png.pngtree.com/png-vector/20220511/ourlarge/pngtree-icon-depicting-a-group-of-individuals-with-a-focus-on-business-displayed-in-a-sleek-flat-design-vector-png-image_24387220.jpg);
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color:rgb(176, 207, 65);
+    padding: 30px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+.overlay  {
+    color: #000;
+    font-size: 40px;
+    text-transform: uppercase;
+    white-space: normal;
+    margin-bottom: 40px;
+    font-weight: 800;
+    align-items: center;
+}
+.overlay p {
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.card:hover .overlay {
+    opacity: 1;
+}
+.card:hover {
+    transform: rotate3d(-1, 1, 0, 20deg);
+}
+#reviews {
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    background-color: #000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#reviews h3 {
+    font-size: 24px;
+    color: #e1e4e1;
+    margin-bottom: 10px;
+}
+
+#reviews p {
+    font-size: 16px;
+    color: #dae7d9;
+    line-height: 1.5;
+}
+#page3 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    text-align: start;
+    color: white;
+    
+}
+#page3 h3{
+    font-size: 40px;
+    font-weight: 800px;
+}
+#page3 p{
+    font-size: 40px;
+    font-weight: 800px;
+}
+
+.profile-carousel {
+    width: 80%;
+    overflow: hidden; 
+    background: #0e0000;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+;
+    animation: scroll 15s linear infinite; 
+}
+
+.profile-box {
+    flex: 200px 0 300px; 
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #060000;
+}
+
+.user-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.profile-content {
+    flex: 1;
+}
+
+.user-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.comment {
+    margin: 5px 0 0;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #555;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+

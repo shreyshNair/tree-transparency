@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(black, green);
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: rgb(13, 1, 1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .product-price {
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .btn-add-to-cart {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #218838;
+        }
+
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            padding: 10px 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .cart-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        /* Checkout Page Styling */
+        #checkout-page {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            width: 60%;
+            margin: 30px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #checkout-page h2 {
+            text-align: center;
+        }
+
+        #checkout-page form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #checkout-page form input,
+        #checkout-page form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        #checkout-page form button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        #checkout-page form button:hover {
+            background-color: #218838;
+        }
+
+        .btn-checkout {
+            margin-top: 20px;
+            background-color: #05382b;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-checkout:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cart Icon -->
+    <div class="cart">
+        <span class="cart-icon">🛒</span>
+        <span id="cart-count">0</span> Items
+    </div>
+
+    <!-- Product Cards -->
+    <div class="container">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250" alt="Product 1" class="product-image">
+            <h2 class="product-title">Product 1</h2>
+            <p class="product-price">$19.99</p>
+            <p class="product-description">A great product that you will love!</p>
+            <button class="btn-add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250" alt="Product 2" class="product-image">
+            <h2 class="product-title">Product 2</h2>
+            <p class="product-price">$29.99</p>
+            <p class="product-description">This product is perfect for all your needs.</p>
+            <button class="btn-add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250" alt="Product 3" class="product-image">
+            <h2 class="product-title">Product 3</h2>
+            <p class="product-price">$39.99</p>
+            <p class="product-description">Limited edition item you can’t miss!</p>
+            <button class="btn-add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250" alt="Product 3" class="product-image">
+            <h2 class="product-title">Product 3</h2>
+            <p class="product-price">$39.99</p>
+            <p class="product-description">Limited edition item you can’t miss!</p>
+            <button class="btn-add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250" alt="Product 3" class="product-image">
+            <h2 class="product-title">Product 3</h2>
+            <p class="product-price">$39.99</p>
+            <p class="product-description">Limited edition item you can’t miss!</p>
+            <button class="btn-add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250" alt="Product 3" class="product-image">
+            <h2 class="product-title">Product 3</h2>
+            <p class="product-price">$39.99</p>
+            <p class="product-description">Limited edition item you can’t miss!</p>
+            <button class="btn-add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <!-- More product cards here -->
+
+    </div>
+
+    <!-- Checkout Page -->
+    <div id="checkout-page">
+        <h2>Checkout</h2>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+            <label for="address">Shipping Address</label>
+            <textarea id="address" required></textarea>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+
+            <label for="payment">Payment Details</label>
+            <input type="text" id="payment" required>
+
+            <button type="submit">Complete Order</button>
+        </form>
+    </div>
+
+    <!-- Checkout Button -->
+    <div class="btn-checkout" onclick="goToCheckout()">Go to Checkout</div>
+
+    <script>
+        let cartCount = 0;
+
+        // Add product to cart
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+        }
+
+        // Navigate to Checkout page
+        function goToCheckout() {
+            document.getElementById('checkout-page').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
